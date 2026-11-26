@@ -3,7 +3,7 @@
   "displayName": "Diet Toke",
   "description": "Maximum-savings AI token compressor via local multi-provider proxy, 1-hop import slicing, and global MCP server.",
   "version": "1.1.0",
-  "publisher": "local-dev",
+  "publisher": "dishantsharma1123",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -108,5 +108,22 @@
     "@vscode/vsce": "^3.2.0",
     "esbuild": "^0.24.0",
     "typescript": "^5.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dishantsharma1123/diet-toke.git"
+  },
+  "homepage": "https://github.com/dishantsharma1123/diet-toke#readme",
+  "bugs": {
+    "url": "https://github.com/dishantsharma1123/diet-toke/issues"
+  },
+  "keywords": [
+    "ai",
+    "tokens",
+    "compression",
+    "cline",
+    "mcp",
+    "ast",
+    "llm"
+  ]
 }
