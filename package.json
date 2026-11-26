@@ -1,0 +1,112 @@
+{
+  "name": "diet-toke",
+  "displayName": "Diet Toke",
+  "description": "Maximum-savings AI token compressor via local multi-provider proxy, 1-hop import slicing, and global MCP server.",
+  "version": "1.1.0",
+  "publisher": "local-dev",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dietToke.toggle",
+        "title": "Diet Toke: Toggle Token Compression"
+      },
+      {
+        "command": "dietToke.copyEnv",
+        "title": "Diet Toke: Copy Shell Export Commands"
+      },
+      {
+        "command": "dietToke.syncMcp",
+        "title": "Diet Toke: Sync Global Agent MCP Configs"
+      },
+      {
+        "command": "dietToke.showStats",
+        "title": "Diet Toke: Show Token Savings Stats"
+      },
+      {
+        "command": "dietToke.resetCache",
+        "title": "Diet Toke: Reset Deduplication Cache"
+      },
+      {
+        "command": "dietToke.resetStats",
+        "title": "Diet Toke: Reset Token Stats"
+      },
+      {
+        "command": "dietToke.resetLifetimeStats",
+        "title": "Diet Toke: Reset Lifetime Token Stats"
+      },
+      {
+        "command": "dietToke.openDashboard",
+        "title": "Diet Toke: Open Token Analytics Dashboard"
+      }
+    ],
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "diet-toke.mcpServer",
+        "label": "Diet Toke Context Server"
+      }
+    ],
+    "configuration": {
+      "title": "Diet Toke",
+      "properties": {
+        "dietToke.port": {
+          "type": "number",
+          "default": 48192,
+          "description": "Local loopback port for the Diet Toke proxy and MCP server."
+        },
+        "dietToke.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable 5-layer token compression on proxied LLM requests."
+        },
+        "dietToke.pruneTools": {
+          "type": "boolean",
+          "default": true,
+          "description": "Prune unused MCP/tool schemas based on the active prompt."
+        },
+        "dietToke.injectPromptCache": {
+          "type": "boolean",
+          "default": true,
+          "description": "Inject cache_control breakpoints for Anthropic/OpenAI prefix caching."
+        },
+        "dietToke.autoSyncGlobalMcp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically register Diet Toke MCP server in ~/.claude.json, ~/.cursor/mcp.json, and ~/.copilot/mcp-config.json."
+        },
+        "dietToke.autoSyncAgentRules": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically inject Diet Toke MCP usage rules into global Claude, Copilot, Cline, Roo Code, and Cursor instruction files."
+        },
+        "dietToke.autoConfigureShellRc": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically add a health-checked Diet Toke proxy block to ~/.zshrc and ~/.bashrc for external terminals."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "npm run compile && npx vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/vscode": "^1.99.0",
+    "@vscode/vsce": "^3.2.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}
