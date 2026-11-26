@@ -1,5 +1,7 @@
 # Diet Toke (`v1.1.0`)
 
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/dishantsharma1123.diet-toke?label=VS%20Code%20Marketplace&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=dishantsharma1123.diet-toke) [![VS Code Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/dishantsharma1123.diet-toke?label=Installs)](https://marketplace.visualstudio.com/items?itemName=dishantsharma1123.diet-toke)
+
 **Full-payload token compression, TypeScript Compiler AST skeletonization, and live cost analytics for AI coding agents in VS Code.**
 
 Diet Toke sits transparently between your VS Code AI coding agent (**Cline**, **Roo Code**, **Continue**) and your LLM provider as a zero-dependency local HTTP proxy (`127.0.0.1:48192`) and Model Context Protocol (MCP) server. It compacts repetitive system prompts, verbose tool schemas, file reads, terminal logs, and multi-turn conversation history—cutting **65.0% of total session input tokens** (and up to **77.6%** on multi-turn requests) while keeping active target files intact during edits.
