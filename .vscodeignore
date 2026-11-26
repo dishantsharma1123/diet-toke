@@ -4,4 +4,4 @@ node_modules/**
 tsconfig.json
 esbuild.js
 *.map
-*.vsix
+*.vsix!Diet-Toke.png
